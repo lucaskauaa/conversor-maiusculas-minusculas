@@ -10,8 +10,6 @@ const copy = document.getElementById('copy');
 const characteres = document.getElementById('characteres');
 const wordsCount = document.getElementById('words');
 
-text.focus();
-
 text.addEventListener('input', datas);
 function datas () {
     characteres.innerHTML = `Caracteres: ${text.value.length}`;

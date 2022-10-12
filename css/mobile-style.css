@@ -11,6 +11,8 @@
 
     textarea {
         font-size: 18px;
+        height: 230px;
+        overflow: auto;
     }
 
     footer {
