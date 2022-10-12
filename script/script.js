@@ -25,12 +25,10 @@ function datas () {
 
 maiusc.addEventListener('click', () => {
     text.value = text.value.toUpperCase();
-    text.focus();
 })
 
 minusc.addEventListener('click', () => {
     text.value = text.value.toLowerCase();
-    text.focus();
 })
 
 firstLetterMaiusc.addEventListener('click', () => {
@@ -38,7 +36,6 @@ firstLetterMaiusc.addEventListener('click', () => {
     letters = letters.split('');
     letters[0] = letters[0].toUpperCase();
     text.value = letters.join('');
-    text.focus();
 })
 
 allFirstLetterMaiusc.addEventListener('click', () => {
@@ -54,7 +51,6 @@ allFirstLetterMaiusc.addEventListener('click', () => {
         words[i] = letters.join('');
     }
     text.value = words.join(' ');
-    text.focus();
 })
 
 alternade.addEventListener('click', () => {
@@ -67,25 +63,21 @@ alternade.addEventListener('click', () => {
         letters[i] = letters[i].toUpperCase();
     }
     text.value = letters.join('');
-    text.focus();
 })
 
 invert.addEventListener('click', () => {
     let letters = text.value.split('');
     letters = letters.reverse();
     text.value = letters.join('');
-    text.focus();
 })
 
 copy.addEventListener('click', () => {
     text.select();
     text.setSelectionRange(0, 99999)
     document.execCommand("copy");
-    text.focus();
 })
 
 clean.addEventListener('click', () => {
     text.value = '';
     datas();
-    text.focus();
 })

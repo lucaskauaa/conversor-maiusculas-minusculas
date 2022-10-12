@@ -1,2 +1,3 @@
 # conversor-maiusc-minusc
- conversor de texto para tamanhos diferentes, feito com HTML, CSS e JavaScript puro
+
+<a href="https://lucaskauaa.github.io/conversor-maiusc-minusc/html/index.html" target="_blank" rel="external">Conversor de Maiúsculas e Minúsculas.</a>
