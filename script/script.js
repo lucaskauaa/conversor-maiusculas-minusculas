@@ -12,9 +12,6 @@ const wordsCount = document.getElementById('words');
 
 text.addEventListener('input', datas);
 function datas () {
-    if(text.scrollHeight > text.offsetHeight){
-        text.rows += 1;
-    }
     characteres.innerHTML = `Caracteres: ${text.value.length}`;
     let words = text.value.split(' ');
     if(text.value === '') {
