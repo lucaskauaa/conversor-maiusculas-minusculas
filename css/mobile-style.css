@@ -9,9 +9,9 @@
         font-size: 0.9em;
     }
 
-    textarea {
-        font-size: 18px;
-        height: 250px;
+    form textarea {
+        font-size: 17px;
+        height: 285px;
     }
 
     footer {
