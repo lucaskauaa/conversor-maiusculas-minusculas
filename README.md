@@ -1,3 +1,3 @@
-# conversor-maiusc-minusc
+# Conversor de Maiúsculas e Minúsculas
 
-<a href="https://lucaskauaa.github.io/conversor-maiusc-minusc/html/index.html" target="_blank" rel="external">Conversor de Maiúsculas e Minúsculas.</a>
+🔗  <a href="https://lucaskauaa.github.io/conversor-maiusculas-minusculas/index.html" target="_self" rel="external">Acessar o Site</a>
