@@ -10,72 +10,71 @@ const copy = document.getElementById('copy');
 const characteres = document.getElementById('characteres');
 const wordsCount = document.getElementById('words');
 
-text.addEventListener('input', datas);
-function datas () {
+function updateData() {
     characteres.innerHTML = `Caracteres: ${text.value.length}`;
-    let words = text.value.split(' ');
-    if(text.value === '') {
-        wordsCount.innerHTML = `Palavras: 0`;
-    } else {
-        wordsCount.innerHTML = `Palavras: ${words.length}`; 
-    }
+    const words = text.value.trim().split(/\s+/);
+    const count = text.value.trim() === '' ? 0 : words.length;
+    wordsCount.innerHTML = `Palavras: ${count}`;
 }
+
+function capitalizeFirstLetter(texto) {
+    if (!texto) return '';
+    return texto[0].toUpperCase() + texto.slice(1).toLowerCase();
+}
+
+function capitalizeAllWords(texto) {
+    return texto
+        .toLowerCase()
+        .split(' ')
+        .map(word => word.length >= 3 ? capitalizeFirstLetter(word) : word)
+        .join(' ');
+}
+
+function alternateLetters(texto) {
+    return texto
+        .toLowerCase()
+        .split('')
+        .map((char, index) => index % 2 === 0 ? char.toUpperCase() : char)
+        .join('');
+}
+
+function reverseText(texto) {
+    return texto.split('').reverse().join('');
+}
+
+text.addEventListener('input', updateData);
 
 maiusc.addEventListener('click', () => {
     text.value = text.value.toUpperCase();
-})
+});
 
 minusc.addEventListener('click', () => {
     text.value = text.value.toLowerCase();
-})
+});
 
 firstLetterMaiusc.addEventListener('click', () => {
-    let letters = text.value.toLowerCase();
-    letters = letters.split('');
-    letters[0] = letters[0].toUpperCase();
-    text.value = letters.join('');
-})
+    text.value = capitalizeFirstLetter(text.value);
+});
 
 allFirstLetterMaiusc.addEventListener('click', () => {
-    let letters;
-    let words = text.value.toLowerCase();
-    words = words.split(' ');
-    for(let i in words) {
-        if(words[i].length < 3) {
-            continue;
-        }
-        letters = words[i].split('');
-        letters[0] = letters[0].toUpperCase();
-        words[i] = letters.join('');
-    }
-    text.value = words.join(' ');
-})
+    text.value = capitalizeAllWords(text.value);
+});
 
 alternade.addEventListener('click', () => {
-    let letters = text.value.toLowerCase();
-    letters = letters.split('');
-    for(let i in letters) {
-        if(i % 2 !== 0) {
-            continue;
-        }
-        letters[i] = letters[i].toUpperCase();
-    }
-    text.value = letters.join('');
-})
+    text.value = alternateLetters(text.value);
+});
 
 invert.addEventListener('click', () => {
-    let letters = text.value.split('');
-    letters = letters.reverse();
-    text.value = letters.join('');
-})
+    text.value = reverseText(text.value);
+});
 
 copy.addEventListener('click', () => {
     text.select();
-    text.setSelectionRange(0, 99999)
-    document.execCommand("copy");
-})
+    text.setSelectionRange(0, 99999);
+    document.execCommand('copy');
+});
 
 clean.addEventListener('click', () => {
     text.value = '';
-    datas();
-})
+    updateData();
+});
